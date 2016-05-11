@@ -1,2 +1,2 @@
 # -*- encoding: utf-8 -*-
-from . import openacademy_course.py
+from . import openacademy_course
