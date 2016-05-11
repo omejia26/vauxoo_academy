@@ -16,6 +16,6 @@
     'data': [
     ],
     'demo': [
-        # 'demo.xml',
+         'demo/openacademy_course_demo.xml',
     ],
 }
