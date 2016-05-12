@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="course_form_view">
+            <field name="name">course.form.view</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <form string="Formulario del curso">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Creamos una accion antes de asignarla al menu -->
+        <record model="ir.actions.act_window" id="course_list_action">
+            <field name="name">Cursos</field>
+            <field name="model">openacademy.course</field>
+            <field name="res_model">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create"></p>
+            </field>
+        </record>
+    </data>
+</openerp>
