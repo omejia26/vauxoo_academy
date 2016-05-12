@@ -18,12 +18,20 @@
         <!-- Creamos una accion antes de asignarla al menu -->
         <record model="ir.actions.act_window" id="course_list_action">
             <field name="name">Cursos</field>
-            <field name="model">openacademy.course</field>
-            <field name="res_model">form</field>
+            <field name="res_model">openacademy.course</field>
+            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create"></p>
             </field>
         </record>
+
+        <!-- Menu principal -->
+        <menuitem id="main_openacademy_menu" name="Open Academy"/>
+        <!-- Submenu asociado al menu padre -->
+        <menuitem id="openacademy_menu" name="Open Academy" parent="main_openacademy_menu"/>
+        <!--Le pasamos al action el id del formulario a ejecutar -->
+        <menuitem id="courses_menu" name="Courses" parent="openacademy_menu" action="course_list_action"/>
+
     </data>
 </openerp>

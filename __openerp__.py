@@ -14,6 +14,7 @@
     'version': '0.1',
     'depends': ['base'],
     'data': [
+        'view/openacademy_course_view.xml',
     ],
     'demo': [
          'demo/openacademy_course_demo.xml',
