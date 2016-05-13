@@ -9,12 +9,31 @@
                     <sheet>
                         <group>
                             <field name="name"/>
-                            <field name="description" />
                         </group>
+                        <notebook>
+                            <page string="Descripcion">
+                                <field name="description" />
+                            </page>
+                            <page string="About">
+                                Informacion extra
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
+<!-- Creamos una vista de busqueda con los campos a buscar-->
+<record model="ir.ui.view" id="course_search_view">
+    <field name="name">course.search</field>
+    <field name="model">openacademy.course</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+            <field name="description" />
+        </search>
+    </field>
+</record>
+
         <!-- Creamos una accion antes de asignarla al menu -->
         <record model="ir.actions.act_window" id="course_list_action">
             <field name="name">Cursos</field>
