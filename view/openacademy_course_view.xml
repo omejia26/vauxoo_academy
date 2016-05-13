@@ -22,6 +22,18 @@
                 </form>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">course.tree.view</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <tree string="Curso">
+                    <field name="name"/>
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+
 <!-- Creamos una vista de busqueda con los campos a buscar-->
 <record model="ir.ui.view" id="course_search_view">
     <field name="name">course.search</field>
