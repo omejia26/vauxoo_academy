@@ -25,6 +25,18 @@
                 </form>
             </field>
         </record>
+<!-- Vista arbol session -->
+        <record model="ir.ui.view" id="session_tree_view">
+            <field name="name">session.tree.view</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <tree string="Sesiones">
+                    <field name="name"/>
+                    <field name="course_id" />
+                </tree>
+            </field>
+        </record>
+
     <!-- Accion de ventana para el formulario -->
         <record model="ir.actions.act_window" id="session_list_action">
             <field name="name">Sessions</field>
