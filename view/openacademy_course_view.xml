@@ -9,6 +9,7 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="responsible_id" />
                         </group>
                         <notebook>
                             <page string="Descripcion">
@@ -30,6 +31,7 @@
                 <tree string="Curso">
                     <field name="name"/>
                     <field name="description" />
+                    <field name="responsible_id" />
                 </tree>
             </field>
         </record>

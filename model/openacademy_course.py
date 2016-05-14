@@ -10,4 +10,6 @@ class Course(models.Model):
 
     name = fields.Char(string='Titulo', required=True)
     description = fields.Text(string='Descripcion')
-
+    responsible_id = fields.Many2one('res.users',
+                                     ondelete='set null',
+                                     string="Responsable", index=True)
