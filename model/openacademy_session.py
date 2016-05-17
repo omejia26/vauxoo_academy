@@ -6,7 +6,7 @@ class Session(models.Model):
     _name = 'openacademy.session'
 
     name = fields.Char(required=True)
-    start_date = fields.Date()
+    start_date = fields.Date(default=fields.Date.today)
     duration = fields.Float(digits=(6, 2), help="Duracion en dias")
     seats = fields.Integer(string="Numero de asientos")
     # El ilike busca en los tags tambien
@@ -22,7 +22,7 @@ class Session(models.Model):
     attendee_ids = fields.Many2many('res.partner', string="Asistentes")
     taken_seats = fields.Float(string="Asientos tomados",
                                compute="_taken_seats")
-
+    active = fields.Boolean(default=True)   # Todos los registros sean activos
     """
     Decoradores:
         @api.one: Entre a cada uno de los registros

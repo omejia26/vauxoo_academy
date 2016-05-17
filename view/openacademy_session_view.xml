@@ -13,6 +13,7 @@
                             <field name="name"/>
                             <field name="taken_seats" widget="progressbar"/>
                             <field name="instructor_id"/>
+                            <field name="active" /> <!-- Es un standard poner al final el active id en la vista -->
                         </group>
                         <group string="Horario">
                             <field name="start_date"/>
