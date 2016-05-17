@@ -11,10 +11,8 @@
                         <group string="General">
                             <field name="course_id" />
                             <field name="name"/>
+                            <field name="taken_seats" widget="progressbar"/>
                             <field name="instructor_id"/>
-                            <field name="start_date"/>
-                            <field name="duration"/>
-                            <field name="seats"/>
                         </group>
                         <group string="Horario">
                             <field name="start_date"/>

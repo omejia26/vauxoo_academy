@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import fields, models
+from openerp import fields, models, api
 
 
 class Session(models.Model):
@@ -20,3 +20,19 @@ class Session(models.Model):
                                 string="Curso",
                                 required=True)
     attendee_ids = fields.Many2many('res.partner', string="Asistentes")
+    taken_seats = fields.Float(string="Asientos tomados",
+                               compute="_taken_seats")
+
+    """
+    Decoradores:
+        @api.one: Entre a cada uno de los registros
+        @api.depends: Campos a utilizar
+        Se declaran de manera consecutiva a la definicion de la clase
+    """
+    @api.one
+    @api.depends('seats', 'attendee_ids')
+    def _taken_seats(self):
+        if not self.seats:
+            self.seats = 0
+        else:
+            self.taken_seats = 100.0 * len(self.attendee_ids) / self.seats
