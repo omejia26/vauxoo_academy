@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import fields, models, api
+from openerp import fields, models, api, exceptions
 
 
 class Session(models.Model):
@@ -36,3 +36,28 @@ class Session(models.Model):
             self.seats = 0
         else:
             self.taken_seats = 100.0 * len(self.attendee_ids) / self.seats
+
+    @api.onchange('seats', 'attendee_ids')
+    def _verify_valid_seats(self):
+        if self.seats < 0:
+            return {
+                'warning': {
+                    'title': "Valor incorrecto para los 'asientos'",
+                    'message': "El numero de asientos disponibles " +
+                    "no pueden ser negativos",
+                }
+            }
+        if self.seats < len(self.attendee_ids):
+            return {
+                'warning': {
+                    'title': "Too many attendes",
+                    'message': "Increase seats or remove excess attendees",
+                }
+            }
+
+    @api.one
+    @api.constrains('instructor_id', 'attendee_ids')
+    def _check_instructor_not_in_attendees(self):
+        if self.instructor_id and self.instructor_id in self.attendee_ids:
+            raise exceptions.ValidationError("Un instructor no puede" +
+                                             " ser su propio asistente")
