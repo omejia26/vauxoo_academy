@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from openerp import fields, models, api, exceptions
-
+from datetime import timedelta
 
 class Session(models.Model):
     _name = 'openacademy.session'
@@ -23,6 +23,8 @@ class Session(models.Model):
     taken_seats = fields.Float(string="Asientos tomados",
                                compute="_taken_seats")
     active = fields.Boolean(default=True)   # Todos los registros sean activos
+    end_date = fields.Date(string="Fecha Final", store=True,
+                           compute='_get_end_date', inverse='_set_end_date')
     """
     Decoradores:
         @api.one: Entre a cada uno de los registros
@@ -61,3 +63,21 @@ class Session(models.Model):
         if self.instructor_id and self.instructor_id in self.attendee_ids:
             raise exceptions.ValidationError("Un instructor no puede" +
                                              " ser su propio asistente")
+
+    @api.depends('start_date', 'duration')
+    def _get_end_date(self):
+        for r in self:
+            if not (r.start_date and r.duration):
+                r.end_date = r.start_date
+                continue
+            start = fields.Datetime.from_string(r.start_date)
+            duration = timedelta(days=r.duration, seconds=-1)
+            r.end_date = start + duration
+
+    def _set_end_date(self):
+        for r in self:
+            if not (r.start_date and r.end_date):
+                continue
+            start_date = fields.Datetime.from_string(r.start_date)
+            end_date = fields.Datetime.from_string(r.end_date)
+            r.duration = (end_date - start_date).days + 1

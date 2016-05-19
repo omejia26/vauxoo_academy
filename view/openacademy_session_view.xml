@@ -26,6 +26,18 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="session_calendar_view">
+            <field name="name">session.calendar</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario Sesion"
+                          date_start="start_date"
+                          date_stop ="end_date"
+                            color="instructor_id">
+                         <field name="name" />
+                </calendar>
+            </field>
+        </record>
 <!-- Vista arbol session -->
         <record model="ir.ui.view" id="session_tree_view">
             <field name="name">session.tree.view</field>
@@ -44,7 +56,7 @@
             <field name="name">Sessions</field>
             <field name="res_model">openacademy.session</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar</field>
         </record>
     <!-- Agregamos la accion de formulario y lo asociamos al menu padre de la vista creada del openacademy_course_view.xml -->
         <menuitem id="session_menu" name="Sessions"
