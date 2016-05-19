@@ -2,11 +2,12 @@
 from openerp import fields, models, api, exceptions
 from datetime import timedelta
 
+
 class Session(models.Model):
     _name = 'openacademy.session'
 
     name = fields.Char(required=True)
-    start_date = fields.Date(default=fields.Date.today)
+    start_date = fields.Date(default=fields.Date.today, string="Fecha inicio")
     duration = fields.Float(digits=(6, 2), help="Duracion en dias")
     seats = fields.Integer(string="Numero de asientos")
     # El ilike busca en los tags tambien
@@ -25,6 +26,8 @@ class Session(models.Model):
     active = fields.Boolean(default=True)   # Todos los registros sean activos
     end_date = fields.Date(string="Fecha Final", store=True,
                            compute='_get_end_date', inverse='_set_end_date')
+    hours = fields.Float(string="Duration in hours",
+                         compute='_get_hours', inverse='_set_hours')
     """
     Decoradores:
         @api.one: Entre a cada uno de los registros
@@ -81,3 +84,12 @@ class Session(models.Model):
             start_date = fields.Datetime.from_string(r.start_date)
             end_date = fields.Datetime.from_string(r.end_date)
             r.duration = (end_date - start_date).days + 1
+
+    @api.one
+    @api.depends('duration')
+    def _get_hours(self):
+        self.hours = self.duration * 24
+
+    @api.one
+    def _set_hours(self):
+        self.duration = self.hours / 24

@@ -19,6 +19,7 @@
                             <field name="start_date"/>
                             <field name="duration"/>
                             <field name="seats"/>
+                            <field name="hours"/>
                         </group>
                         <label for="attendee_ids" />
                         <field name="attendee_ids" />
@@ -31,11 +32,23 @@
             <field name="model">openacademy.session</field>
             <field name="arch" type="xml">
                 <calendar string="Calendario Sesion"
-                          date_start="start_date"
+                    date_start="start_date"
                           date_stop ="end_date"
                             color="instructor_id">
                          <field name="name" />
                 </calendar>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="session_gantt_view">
+            <field name="name">session.gantt</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <gantt string="Sesion Gantt" color="course_id"
+                    date_start="start_date" date_delay="hours">
+                    <level object="res.partner" link="instructor_id">
+                        <field name="name" />
+                    </level>
+                </gantt>
             </field>
         </record>
 <!-- Vista arbol session -->
@@ -56,7 +69,7 @@
             <field name="name">Sessions</field>
             <field name="res_model">openacademy.session</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_mode">tree,form,calendar,gantt</field>
         </record>
     <!-- Agregamos la accion de formulario y lo asociamos al menu padre de la vista creada del openacademy_course_view.xml -->
         <menuitem id="session_menu" name="Sessions"
