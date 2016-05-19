@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Codificacion de caracteres bajo estandar utf-8"""
 from openerp import fields, models, api, exceptions
 from datetime import timedelta
 
@@ -28,6 +29,11 @@ class Session(models.Model):
                            compute='_get_end_date', inverse='_set_end_date')
     hours = fields.Float(string="Duration in hours",
                          compute='_get_hours', inverse='_set_hours')
+    attendees_count = fields.Integer(string="Contador de Asistentes",
+                                     compute='_get_attendees_count',
+                                     store=True)
+    color = fields.Integer()
+
     """
     Decoradores:
         @api.one: Entre a cada uno de los registros
@@ -69,21 +75,21 @@ class Session(models.Model):
 
     @api.depends('start_date', 'duration')
     def _get_end_date(self):
-        for r in self:
-            if not (r.start_date and r.duration):
-                r.end_date = r.start_date
+        for element in self:
+            if not (element.start_date and element.duration):
+                element.end_date = element.start_date
                 continue
-            start = fields.Datetime.from_string(r.start_date)
-            duration = timedelta(days=r.duration, seconds=-1)
-            r.end_date = start + duration
+            start = fields.Datetime.from_string(element.start_date)
+            duration = timedelta(days=element.duration, seconds=-1)
+            element.end_date = start + duration
 
     def _set_end_date(self):
-        for r in self:
-            if not (r.start_date and r.end_date):
+        for element in self:
+            if not (element.start_date and element.end_date):
                 continue
-            start_date = fields.Datetime.from_string(r.start_date)
-            end_date = fields.Datetime.from_string(r.end_date)
-            r.duration = (end_date - start_date).days + 1
+            start_date = fields.Datetime.from_string(element.start_date)
+            end_date = fields.Datetime.from_string(element.end_date)
+            element.duration = (end_date - start_date).days + 1
 
     @api.one
     @api.depends('duration')
@@ -93,3 +99,8 @@ class Session(models.Model):
     @api.one
     def _set_hours(self):
         self.duration = self.hours / 24
+
+    @api.one
+    @api.depends('attendee_ids')
+    def _get_attendees_count(self):
+        self.attendees_count = len(self.attendee_ids)
