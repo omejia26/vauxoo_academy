@@ -17,6 +17,7 @@
         'view/openacademy_course_view.xml',
         'view/openacademy_session_view.xml',
         'view/partner_view.xml',
+        'report/openacademy_session_report.xml',
     ],
     'demo': [
          'demo/openacademy_course_demo.xml',

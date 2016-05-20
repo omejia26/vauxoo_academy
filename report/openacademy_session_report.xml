@@ -1,0 +1,31 @@
+<openerp>
+<data>
+<!-- el parametro name es : nombre_carpeta + template_id : para que funcione el modelo de datos -->
+    <report
+        id="report_session"
+        model="openacademy.session"
+        string="Session Report"
+        name="vauxoo_academy_project.report_session_view"
+        file="openacademy.report_session"
+        report_type="qweb-pdf" />
+
+    <template id="report_session_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+<!--                <t t-call="report.external_layout"> --> <!-- Header y Footer predefinidos -->
+                    <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p>From <span t-field="doc.start_date"/> to <span t-field="doc.end_date"/></p>
+                        <h3>Attendees:</h3>
+                        <ul>
+                            <t t-foreach="doc.attendee_ids" t-as="attendee"> <!-- for anidado -->
+                                <li><span t-field="attendee.name"/></li>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+<!--            </t> -->
+        </t>
+    </template>
+</data>
+</openerp>
