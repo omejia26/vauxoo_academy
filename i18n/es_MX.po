@@ -1,0 +1,293 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vauxoo_academy_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-20 03:01+0000\n"
+"PO-Revision-Date: 2016-05-19 22:03-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: vauxoo_academy_project
+#: model:ir.actions.act_window,help:vauxoo_academy_project.course_list_action
+msgid ""
+"<p class=\"oe_view_nocontent_create\"/>\n"
+"            "
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_form_view
+msgid "About"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,active:0
+msgid "Active"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,taken_seats:0
+msgid "Asientos tomados"
+msgstr "Taken Seats"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,attendee_ids:0
+msgid "Asistentes"
+msgstr "Attendes"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.session_calendar_view
+msgid "Calendario Sesion"
+msgstr "Session Calendar"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,color:0
+msgid "Color"
+msgstr "Colour"
+
+#. module: vauxoo_academy_project
+#: model:ir.ui.menu,name:vauxoo_academy_project.configuration_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: model:ir.actions.act_window,name:vauxoo_academy_project.contact_list_action
+#: model:ir.ui.menu,name:vauxoo_academy_project.contact_menu
+msgid "Contacts"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,attendees_count:0
+msgid "Contador de Asistentes"
+msgstr "Attendee Count"
+
+#. module: vauxoo_academy_project
+#: model:ir.ui.menu,name:vauxoo_academy_project.courses_menu
+msgid "Courses"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,create_uid:0
+#: field:openacademy.session,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,create_date:0
+#: field:openacademy.session,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_tree_view
+#: field:openacademy.session,course_id:0
+msgid "Curso"
+msgstr "Course"
+
+#. module: vauxoo_academy_project
+#: model:ir.actions.act_window,name:vauxoo_academy_project.course_list_action
+msgid "Cursos"
+msgstr "Courses"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.view_openacad_session_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_form_view
+#: field:openacademy.course,description:0
+msgid "Descripcion"
+msgstr "Description"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,display_name:0
+#: field:openacademy.session,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: help:openacademy.session,duration:0
+msgid "Duracion en dias"
+msgstr "Duration in days"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,duration:0
+msgid "Duration"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,hours:0
+msgid "Duration in hours"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: sql_constraint:openacademy.course:0
+msgid "El titulo del curso debe ser unico"
+msgstr "The title of the course must be unique"
+
+#. module: vauxoo_academy_project
+#: sql_constraint:openacademy.course:0
+msgid "El titulo del curso no puede ser la descripcion"
+msgstr "The title of the course may not be the description"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,end_date:0
+msgid "Fecha Final"
+msgstr "End date"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,start_date:0
+msgid "Fecha inicio"
+msgstr "Start date"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_form_view
+msgid "Formulario del curso"
+msgstr "Form of the course"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.session_form_view
+msgid "General"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.session_form_view
+msgid "Horario"
+msgstr "Schedule"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,id:0 field:openacademy.session,id:0
+msgid "ID"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_form_view
+msgid "Informacion extra"
+msgstr "Extra About"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,instructor_id:0 field:res.partner,instructor:0
+msgid "Instructor"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,__last_update:0
+#: field:openacademy.session,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,write_uid:0 field:openacademy.session,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,write_date:0
+#: field:openacademy.session,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_search_view
+msgid "Mis cursos"
+msgstr "My courses"
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,name:0
+msgid "Name"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.session,seats:0
+msgid "Numero de asientos"
+msgstr "Number of seats"
+
+#. module: vauxoo_academy_project
+#: model:ir.ui.menu,name:vauxoo_academy_project.main_openacademy_menu
+#: model:ir.ui.menu,name:vauxoo_academy_project.openacademy_menu
+msgid "Open Academy"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.session_graph_view
+msgid "Participations by Courses"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: model:ir.model,name:vauxoo_academy_project.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_search_view
+#: field:openacademy.course,responsible_id:0
+msgid "Responsable"
+msgstr "Responsible"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.session_gantt_view
+msgid "Sesion Gantt"
+msgstr "Gantt Session"
+
+#. module: vauxoo_academy_project
+#: field:res.partner,session_ids:0
+msgid "Sesion como instructor"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_form_view
+#: field:openacademy.course,session_ids:0
+#: view:openacademy.session:vauxoo_academy_project.session_tree_view
+#: view:res.partner:vauxoo_academy_project.partner_instructor_form_view
+msgid "Sesiones"
+msgstr "Session"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.course:vauxoo_academy_project.course_form_view
+msgid "Sesiones Registradas"
+msgstr "Session Register"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.session_form_view
+msgid "Session Form"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.view_openacad_session_kanban
+msgid "Session name:"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: model:ir.actions.act_window,name:vauxoo_academy_project.session_list_action
+#: model:ir.ui.menu,name:vauxoo_academy_project.session_menu
+msgid "Sessions"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.view_openacad_session_kanban
+msgid "Start date:"
+msgstr ""
+
+#. module: vauxoo_academy_project
+#: field:openacademy.course,name:0
+msgid "Titulo"
+msgstr "Title"
+
+#. module: vauxoo_academy_project
+#: view:openacademy.session:vauxoo_academy_project.view_openacad_session_kanban
+msgid "duration:"
+msgstr ""
