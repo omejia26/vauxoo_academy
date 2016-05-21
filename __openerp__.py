@@ -12,12 +12,13 @@
     'website': "http://www.typrefrigeracion.com.mx",
     'category': 'TyP_training',
     'version': '0.1',
-    'depends': ['base'],
+    'depends': ['base','board'],
     'data': [
         'view/openacademy_course_view.xml',
         'view/openacademy_session_view.xml',
         'view/partner_view.xml',
         'report/openacademy_session_report.xml',
+        'view/openacademy_session_board.xml',
     ],
     'demo': [
          'demo/openacademy_course_demo.xml',
